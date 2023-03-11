@@ -8,7 +8,7 @@ int extraMemoryAllocated;
 // extraMemoryAllocated counts bytes of extra memory allocated
 void mergeSort(int pData[], int l, int r)
 {
-	
+	// recursion
 }
 
 // implement insertion sort
