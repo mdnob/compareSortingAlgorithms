@@ -27,6 +27,8 @@ void mergeSort(int pData[], int l, int r)
 		int j = 0;
 		
 		int * sort = (int *) malloc((r - l + 1) * sizeof(int));
+
+		extraMemoryAllocated += (r - l + 1) * sizeof(int);
 		
 		// merge
 		while(l + i <= m || m + j + 1 <= r){
@@ -68,6 +70,7 @@ void insertionSort(int* pData, int n)
 {
 	int i, j;
 	int number;
+	extraMemoryAllocated = sizeof(number);
 
 	for (i = 1; i < n; i++) {
 		number = pData[i];
@@ -101,6 +104,7 @@ void bubbleSort(int* pData, int n)
 			}
 		}
 	}
+	extraMemoryAllocated = sizeof(int);
 }
 
 // implement selection sort
@@ -111,6 +115,7 @@ void selectionSort(int* pData, int n)
 
 	for(int i = 0; i < n; i++){
 		index = i;
+		extraMemoryAllocated += sizeof(index);
 		
 		for(int j = i; j < n; j++){
 			// finds index with minimum
@@ -123,6 +128,7 @@ void selectionSort(int* pData, int n)
 		pData[i] = pData[index];
 		pData[index] = temp;
 	}	
+	extraMemoryAllocated = sizeof(int) * 2;
 }
 
 // parses input file to an integer array
